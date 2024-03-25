@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: chartreuse;
+    position: relative;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    height: 100px;
+    border: 3px solid black;
+    border-bottom: none;
+    padding: 2px;
+}
+
+.game-name img {
+    width: 125px;
+    height: 100%;
+}
+
+#time {
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score {
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#area {
+    width: 300px;
+    height: 300px;
+    border: 3px solid black;
+    display: grid;
+    grid-template-columns: repeat(30, 10px);
+    grid-template-rows: repeat(30, 10px);
+    padding: 2px;
+    background-color: rgb(99, 169, 56);
+}
+
+.box {
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    background-color: chartreuse;
+    border: 3px solid black;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 15px;
+    position: absolute;
+    z-index: 1000;
+}
+
+#show-score {
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.box button {
+    width: 100%;
+    border-radius: 5px;
+    background-color: chartreuse;
+    font-weight: 600;
+}
+
+.snake {
+    border: 1px solid;
+    background-color: green;
+}
+
+.food {
+    border-radius: 50%;
+    background-color: red;
+}
