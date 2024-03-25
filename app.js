@@ -16,10 +16,10 @@ let velX = 0,
     velY = 0;
 let sn = 0;
 let mn = 0;
-let user = [];
+
 let getPoints = [];
-let recor = 0;
-let recorUser;
+let score = 0;
+let scoreUser;
 bestScore.innerHTML = greatScore();
 const myGame = setInterval(createGame, 125);
 const timeLine = setInterval(time, 1000)
@@ -111,7 +111,6 @@ function gameOver() {
     showScore.innerHTML = `score:${p}`;
     box.style.display = "flex";
     saveLocalStorage(p);
-    // getLocalStorage();
 
 }
 
@@ -134,12 +133,11 @@ function time() {
 
 }
 function getLocalStorage() {
-    if (localStorage.getItem("gamer") === null || localStorage.getItem("points") === null) {
-        user = [];
+    if ( localStorage.getItem("points") === null) {
+       
         getPoints = [];
 
     } else {
-        user = JSON.parse(localStorage.getItem("gamer"))
         getPoints = JSON.parse(localStorage.getItem("points"))
     }
 
@@ -153,13 +151,13 @@ function saveLocalStorage(p) {
 function greatScore() {
     getLocalStorage();
     for (let i = 0; i <= getPoints.length; i++) {
-        if (getPoints[i] > recor) {
-            recor = getPoints[i];
-            recorUser = recor;
+        if (getPoints[i] > score) {
+            score = getPoints[i];
+            scoreUser = score;
         }
     }
-    if (recorUser === undefined) {
-        recorUser = " ";
+    if (scoreUser === undefined) {
+        scoreUser = " ";
     }
-    return recorUser;
+    return scoreUser;
 }
